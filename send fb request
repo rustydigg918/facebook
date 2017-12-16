@@ -1,0 +1,64 @@
+/**
+*	PURP
+*	Invite All Friends to Like a Page on Facebook.
+*
+*	BENEFITS
+*	1.	Save yourself from wasting time and doing mundane taks of hitting invite
+*		button for all friends to invite them to like your page, because you can
+*		use this script to automate the process of sending invites to your friends.
+*
+*	2. 	This script solves the problem of getting blocked due to going too fast,
+*		which is usually the case with other scripts, by slowing down the process
+*		of unfriending by moving intermittently at every 2.5 second.
+*
+*
+*	SAFETY
+*	This script is completely safe and did work excellently on Oct 12th 2017.
+*	
+*
+*	INSTRUCTIONS TO USE
+*	Step 1: 	Login to your facebook account on laptop in chrome browser.
+*	Step 2: 	Go to the facebook page for which you want to send invites.
+*	Step 3:		Click 'Invite your friends' and wait until popup box loads well.
+*	Step 4:		Pres Ctrl+Shift+J, to open browser console.
+*	Step 5:		Open this file in a text editor, and copy all the contents of this
+*				file using Ctrl+A and Ctrl+C.
+*	Step 5: 	Paste the copied contents into browser console using Ctrl+V.
+*	Step 6:		After pasting press Enter.
+*	Step 7:		Get yourself a pizza, and sit back and eat while the script does its magic.
+*	Step 8:		Find me on facebook, and send your thanks and follow me on instagram. 
+*				Comeon Man, I saved your time and effort, and only asking for a Thanks and follow!
+*
+*
+*	LICENCE : Apache Licence 2.0
+*
+*
+*	AUTHOR INFORMATION
+*	Author 		: (cc) Pushkar Raj<rustydigg918@gmail.com>
+*	Github 		: github.com/codeofanshuman
+*	Facebok		:	https://www.facebook.com/rustydigg918
+*	Twitter 	:	@pushkar918 
+* website   : kyukey.com
+*	Date of Writing : October 12th, 2016
+*/
+
+CodeSpeed = 2000;
+// CodeSpeed = 5000;
+
+
+
+/********************************************************** DO NOT MODIFY ANYTHING BELOW THIS *****************************************************************/
+
+InviteButtons = document.getElementsByClassName('uiButtonText');
+ButtonsContainer = document.getElementsByClassName('fbProfileBrowserResult threeColumns hideSummary');
+ButtonsContainer = ButtonsContainer[0];
+
+iter_index = 0;
+
+function InviteAll()
+{
+	InviteButtons[iter_index++].click();
+	ButtonsContainer.scrollBy(0,100);
+}
+
+setInterval(InviteAll,2.5*CodeSpeed);
